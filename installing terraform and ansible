@@ -1,3 +1,4 @@
+ubuntu user
 step 1 (Installing terraform)
 sudo su
 sudo apt update
@@ -6,9 +7,20 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashi
 sudo apt update && sudo apt install terraform
 checking the terraform vesrion: terraform --version
 
+Ec2-user
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+sudo yum -y install terraform
+
+
 step 2 (installing ansible)
+ubuntu user
 sudo apt install software-properties-common
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt update
 sudo apt install ansible
 checking the ansible vesrion:ansible --version
+
+Ec2-user
+sudo yum install ansible-core -y
+
