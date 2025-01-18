@@ -1,0 +1,69 @@
+---
+# Ansible Playbook for Setting up Java, Python, and MySQL on Slave Machines
+- hosts: all
+  become: yes
+
+  vars:
+    slave1_roles:
+      - java
+      - python
+    slave2_roles:
+      - java
+      - mysql
+    slave3_roles:
+      - mysql
+      - python
+
+  tasks:
+    - name: Assign roles to Slave1
+      ansible.builtin.set_fact:
+        roles_to_apply: "{{ slave1_roles }}"
+      when: inventory_hostname == 'slave1'
+
+    - name: Assign roles to Slave2
+      ansible.builtin.set_fact:
+        roles_to_apply: "{{ slave2_roles }}"
+      when: inventory_hostname == 'slave2'
+
+    - name: Assign roles to Slave3
+      ansible.builtin.set_fact:
+        roles_to_apply: "{{ slave3_roles }}"
+      when: inventory_hostname == 'slave3'
+
+    - name: Include roles based on assignment
+      ansible.builtin.include_role:
+        name: "{{ item }}"
+      loop: "{{ roles_to_apply }}"
+
+# Directory structure for roles:
+# roles/
+# ├── java/
+# │   ├── tasks/
+# │   │   └── main.yml
+# ├── python/
+# │   ├── tasks/
+# │   │   └── main.yml
+# ├── mysql/
+# │   ├── tasks/
+# │   │   └── main.yml
+
+# Example content for roles/java/tasks/main.yml
+# ---
+# - name: Install Java
+#   ansible.builtin.package:
+#     name: default-jdk
+#     state: present
+
+# Example content for roles/python/tasks/main.yml
+# ---
+# - name: Install Python
+#   ansible.builtin.package:
+#     name: python3
+#     state: present
+
+# Example content for roles/mysql/tasks/main.yml
+# ---
+# - name: Install MySQL
+#   ansible.builtin.package:
+#     name: mysql-server
+#     state: present
