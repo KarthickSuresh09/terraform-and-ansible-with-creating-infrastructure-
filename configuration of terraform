@@ -1,12 +1,12 @@
 Step 1:
 you need to cerate user and accesskey & secretkey
-accesskey: AKIA2CUNLGFCQ3OF4IHN
-secretkey: mFSH+ebp2t6FYUVD/sNEBWvhNvvaRGN4Cz+EK53X
+accesskey: AKIA2CUNLGFCQYF7CEM6
+secretkey: ER07FFLEPxl7YgdXkRZSdXdsrWI53g+rBAI0gPI7
 
 example:
 [root@ip-172-31-2-5 ec2-user]# aws configure
-AWS Access Key ID [None]: AKIA2CUNLGFCQ3OF4IHN
-AWS Secret Access Key [None]: mFSH+ebp2t6FYUVD/sNEBWvhNvvaRGN4Cz+EK53X
+AWS Access Key ID [None]:AKIA2CUNLGFCQYF7CEM6
+AWS Secret Access Key [None]: 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
 Default region name [None]: ap-south-2
 Default output format [None]: text
 
