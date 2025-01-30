@@ -1,0 +1,11 @@
+---
+- name: Install required tools on slave machines
+  hosts: all
+  become: yes
+  roles:
+    - role: java
+      when: "'slave1' in group_names or 'slave2' in group_names"
+    - role: python
+      when: "'slave1' in group_names or 'slave3' in group_names"
+    - role: mysql
+      when: "'slave2' in group_names or 'slave3' in group_names"

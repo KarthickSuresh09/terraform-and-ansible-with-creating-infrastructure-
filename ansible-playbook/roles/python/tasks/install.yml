@@ -1,0 +1,8 @@
+---
+# Install Python
+- name: Install Python
+  apt:
+    name: python3
+    state: present
+    force: yes
+  become: true

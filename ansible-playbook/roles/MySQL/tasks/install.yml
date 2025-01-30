@@ -1,0 +1,4 @@
+---
+- name: Install Mysql
+  apt: name=mysql-server state=latest
+  become: true 
