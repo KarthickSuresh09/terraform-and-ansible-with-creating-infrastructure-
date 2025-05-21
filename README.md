@@ -1,2 +1,1 @@
-terraform-and-ansible-with-creating-infrastructure
-![Infrastructure-Image](https://github.com/user-attachments/assets/88fb7065-72a7-404e-944c-13353aec6c8c)
+![Terraform   Ansible_Creating_Infrastructure ](https://github.com/user-attachments/assets/7a0c6e29-5af3-4e03-80be-701d452ce030)
